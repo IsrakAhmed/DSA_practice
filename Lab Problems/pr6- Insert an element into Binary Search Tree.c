@@ -13,13 +13,6 @@ struct node{
 
 struct node* root = NULL;
 
-void main(){
-    insert(40);
-    insert(50);
-    insert(30);
-    insert(1);
-}
-
 void insert(int data){
     struct node* temp, *parent;
     temp = (struct node*)malloc(sizeof(struct node));
@@ -57,4 +50,11 @@ void insert(int data){
             printf("left here : %d\n",parent->left->data);
         }
     }
+}
+
+void main(){
+    insert(40);
+    insert(50);
+    insert(30);
+    insert(1);
 }
