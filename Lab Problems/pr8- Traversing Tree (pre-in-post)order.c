@@ -23,7 +23,7 @@ void insert(int data){
 
     if(root == NULL){
         root = temp;
-        printf("root here : %d\n",root->data);
+        //printf("root here : %d\n",root->data);
     }
     else{
         struct node* currentNode;
@@ -52,9 +52,27 @@ void insert(int data){
     }
 }
 
+void traverseInorder(struct node* node)
+{
+    if (node == NULL)
+        return;
+
+    traverseInorder(node->left);
+
+    printf("%d ", node->data);
+
+    traverseInorder(node->right);
+}
+
 void main(){
-    insert(40);
-    insert(50);
-    insert(30);
     insert(1);
+    insert(2);
+    insert(3);
+    insert(4);
+    insert(5);
+    insert(6);
+
+    printf("Traversing In-Order : ");
+    traverseInorder(root);
+    printf("\n");
 }
