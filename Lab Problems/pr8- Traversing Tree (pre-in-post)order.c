@@ -77,14 +77,18 @@ void traversePreorder(struct node* node)
 }
 
 void main(){
-    insert(1);
+    insert(11);
     insert(2);
-    insert(3);
-    insert(4);
+    insert(30);
+    insert(14);
     insert(5);
     insert(6);
 
     printf("Traversing In-Order : ");
     traverseInorder(root);
+    printf("\n");
+
+    printf("Traversing Pre-Order : ");
+    traversePreorder(root);
     printf("\n");
 }
