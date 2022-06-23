@@ -64,6 +64,18 @@ void traverseInorder(struct node* node)
     traverseInorder(node->right);
 }
 
+void traversePreorder(struct node* node)
+{
+    if (node == NULL)
+        return;
+
+    printf("%d ", node->data);
+
+    traversePreorder(node->left);
+
+    traversePreorder(node->right);
+}
+
 void main(){
     insert(1);
     insert(2);
