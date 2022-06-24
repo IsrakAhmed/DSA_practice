@@ -52,8 +52,7 @@ void insert(int data){
     }
 }
 
-void traverseInorder(struct node* node)
-{
+void traverseInorder(struct node* node){
     if (node == NULL)
         return;
 
@@ -64,8 +63,7 @@ void traverseInorder(struct node* node)
     traverseInorder(node->right);
 }
 
-void traversePreorder(struct node* node)
-{
+void traversePreorder(struct node* node){
     if (node == NULL)
         return;
 
@@ -74,6 +72,17 @@ void traversePreorder(struct node* node)
     traversePreorder(node->left);
 
     traversePreorder(node->right);
+}
+
+void traversePostorder(struct node* node){
+    if (node == NULL)
+        return;
+
+    traversePostorder(node->left);
+
+    traversePostorder(node->right);
+
+    printf("%d ", node->data);
 }
 
 void main(){
@@ -90,5 +99,9 @@ void main(){
 
     printf("Traversing Pre-Order : ");
     traversePreorder(root);
+    printf("\n");
+
+    printf("Traversing Post-Order : ");
+    traversePostorder(root);
     printf("\n");
 }
