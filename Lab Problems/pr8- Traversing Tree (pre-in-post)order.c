@@ -13,6 +13,15 @@ struct node{
 
 struct node* root = NULL;
 
+struct node* createNode(int data){
+    struct node* temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    temp->data = data;
+    temp->left = NULL;
+    temp->right = NULL;
+    return (temp);
+}
+
 void insert(int data){
     struct node* temp, *parent;
     temp = (struct node*)malloc(sizeof(struct node));
@@ -86,12 +95,22 @@ void traversePostorder(struct node* node){
 }
 
 void main(){
-    insert(11);
+    /*insert(11);
     insert(2);
     insert(30);
     insert(14);
     insert(5);
-    insert(6);
+    insert(6);*/
+
+    root = createNode(8);
+        root->left = createNode(7);
+            root->left->left = createNode(3);
+            root->left->right = createNode(2);
+                root->left->left->left = createNode(0);
+                root->left->left->right = createNode(11);
+        root->right = createNode(0);
+        root->right->left = createNode(0);
+        root->right->right = createNode(9);
 
     printf("Traversing In-Order : ");
     traverseInorder(root);
